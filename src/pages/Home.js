@@ -18,7 +18,7 @@ const Home = () => {
     {
       text: "Save",
       onClick: async ({ target }) => {
-        const URL = "https://guarded-tor-11800.herokuapp.com/api/save";
+        const URL = "https://cryptic-forest-98521.herokuapp.com/api/save";
         const payload = books[target.id];
         await axios.post(URL, payload);
       },
@@ -30,7 +30,7 @@ const Home = () => {
     try {
       event.preventDefault();
 
-      const URL = "https://guarded-tor-11800.herokuapp.com/api/books";
+      const URL = "https://cryptic-forest-98521.herokuapp.com/api/books";
 
       const payload = {
         searchTerm,
@@ -62,7 +62,7 @@ const Home = () => {
       return <div>Sorry no results found :(</div>;
     } else if (!loading && !error && books.length) {
       return (
-        <BookList title="Results" books={books} btnControls={btnControls} />
+        <BookList title='Results' books={books} btnControls={btnControls} />
       );
     }
   };
@@ -75,7 +75,7 @@ const Home = () => {
         onChange={onChange}
       />
       {loading ? <div>Loading...</div> : null}
-      {error ? <div className="text-danger">{error}</div> : null}
+      {error ? <div className='text-danger'>{error}</div> : null}
       {renderBooks()}
     </div>
   );
